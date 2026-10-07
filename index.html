@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bát Hùng Vương</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- shared artwork: the hero character -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="hero" viewBox="0 0 140 220">
+      <path class="f-dred o" d="M40 84 C22 128 14 168 20 208 L120 208 C126 168 118 128 100 84 Z"/>
+      <rect class="f-legs o" x="48" y="146" width="19" height="58" rx="6"/>
+      <rect class="f-legs o" x="73" y="146" width="19" height="58" rx="6"/>
+      <rect class="f-gold o" x="43" y="195" width="27" height="13" rx="5"/>
+      <rect class="f-gold o" x="70" y="195" width="27" height="13" rx="5"/>
+      <path class="o nf" stroke-width="17" d="M44 94 Q25 116 31 142"/>
+      <path class="nf" stroke="#d8402a" stroke-width="10" stroke-linecap="round" d="M44 94 Q25 116 31 142"/>
+      <path class="o nf" stroke-width="17" d="M96 94 Q115 116 109 142"/>
+      <path class="nf" stroke="#d8402a" stroke-width="10" stroke-linecap="round" d="M96 94 Q115 116 109 142"/>
+      <path class="f-red o" d="M42 88 Q70 76 98 88 L94 154 Q70 162 46 154 Z"/>
+      <rect class="f-gold ot" x="45" y="140" width="50" height="11"/>
+      <polygon class="f-gold ot" data-star="70,116,14,6,8"/>
+      <circle class="f-skin ot" cx="31" cy="145" r="7"/>
+      <circle class="f-skin ot" cx="109" cy="145" r="7"/>
+      <circle class="f-skin o" cx="70" cy="54" r="26"/>
+      <path class="f-ink" d="M43 54 Q41 20 70 20 Q99 20 97 54 Q86 41 70 42 Q54 41 43 54 Z"/>
+      <rect class="f-gold ot" x="43" y="37" width="54" height="9" rx="4"/>
+      <polygon class="f-red ot" data-star="70,41.5,7,3,8"/>
+      <circle class="f-ink" cx="60" cy="58" r="3"/>
+      <circle class="f-ink" cx="80" cy="58" r="3"/>
+      <path class="o nf" d="M61 68 Q70 75 79 68"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="half top"></div><div class="half bot"></div>
+  <div class="core">
+    <svg viewBox="-60 -60 120 120"><polygon data-star="0,0,56,24,8" fill="#d9a441"/><circle r="9" fill="#120b08" stroke="#d9a441" stroke-width="2"/></svg>
+    <div class="pct" id="pct">0%</div>
+  </div>
+</div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav class="nav" aria-label="Main">
+  <a class="mark" href="#top">Bát Hùng <b>Vương</b></a>
+  <div class="links">
+    <a href="#hero">Hero</a><a href="#powers">Powers</a><a href="#day">A day</a><a href="#comic">Comic</a><a href="#words">Words</a><a href="#video">Video</a><a href="#team">Team</a>
+  </div>
+  <button class="sound" id="soundNav" type="button" aria-pressed="false" aria-label="Background music">
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="lbl">Music off</span>
+  </button>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="emblem" aria-hidden="true"><svg id="drum" viewBox="-200 -200 400 400"></svg></div>
+  <div class="wrap">
+    <p class="eyebrow">Project 5 · Study Superheroes Comic Strip</p>
+    <h1><span>Bát</span><span>Hùng</span><span>Vương</span></h1>
+    <p class="lede">A first-year student hero with eight study powers and a lot of free time fun.</p>
+    <div class="cta">
+      <a class="btn" href="#comic">Read the comic</a>
+      <button class="btn ghost" id="soundHero" type="button" aria-pressed="false">Play music</button>
+    </div>
+    <p class="meta">Study and free time activities · Unit 2<br>Made by a group of eight</p>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="mq" id="mq"></div></div>
+
+<main>
+<section id="project">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">About the project</p>
+      <h2>A study hero who also knows how to play</h2>
+    </div>
+    <div class="brief">
+      <div>
+        <h3>Objective</h3>
+        <p>To use creative expression while learning vocabulary about studying and leisure activities.</p>
+      </div>
+      <div>
+        <h3>Description</h3>
+        <p>Our group created a comic strip about a study superhero. His study habits and free time activities are unique. The story shows his study routine, how he balances studying with free time, and how his hobbies help him succeed.</p>
+      </div>
+      <div>
+        <h3>Skills developed</h3>
+        <ul>
+          <li>Vocabulary acquisition</li>
+          <li>Artistic expression and creativity</li>
+          <li>Sequencing and storytelling</li>
+          <li>Collaboration and negotiation within groups</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stats" id="stats">
+      <div><b>8</b><span>study powers</span></div>
+      <div><b>6</b><span>comic panels</span></div>
+      <div><b>12</b><span>Unit 2 words</span></div>
+      <div><b>24</b><span>hours in his day</span></div>
+      <div><b>8</b><span>team members</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="hero">
+  <div class="wrap meet">
+    <div class="stage" aria-hidden="true">
+      <svg viewBox="0 0 320 400">
+        <circle cx="160" cy="214" r="150" fill="none" stroke="rgba(217,164,65,.25)" stroke-width="1"/>
+        <circle cx="160" cy="214" r="128" fill="none" stroke="rgba(217,164,65,.25)" stroke-width="1" stroke-dasharray="2 7"/>
+        <polygon data-star="160,214,142,70,8" fill="rgba(217,164,65,.12)" stroke="rgba(217,164,65,.4)" stroke-width="1"/>
+        <ellipse cx="160" cy="372" rx="62" ry="8" fill="rgba(0,0,0,.45)"/>
+        <g class="float"><use href="#hero" x="80" y="130" width="160" height="251"/></g>
+      </svg>
+    </div>
+    <div>
+      <p class="eyebrow">Meet the hero</p>
+      <h2>Bát Hùng Vương</h2>
+      <p class="sub">In Vietnamese, <b>bát</b> means eight. He has eight study powers, and each power matches one member of our team. He studies hard in class and at home. After that, he goes out to play.</p>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>First-year student hero</dd></div>
+        <div><dt>Motto</dt><dd>Study smart. Play well. Never quit.</dd></div>
+        <div><dt>Favorite places</dt><dd>The library and the basketball court</dd></div>
+        <div><dt>Weakness</dt><dd>He can never say no to one more basketball game.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="powers">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Eight study powers</p>
+      <h2>Eight powers, one goal</h2>
+      <p class="sub">Each wheel shows which one of the eight powers you are reading.</p>
+    </div>
+    <div class="powers" id="powerGrid"></div>
+  </div>
+</section>
+
+<section id="day" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Daily routine</p>
+      <h2>A day with Bát Hùng Vương</h2>
+      <p class="sub">Study takes a big part of his day, but free time is part of the plan. Point at a time on the list to see it on the clock.</p>
+    </div>
+    <div class="day">
+      <div>
+        <div class="clock" id="clock">
+          <svg viewBox="-170 -170 340 340" role="img" aria-label="A 24 hour clock showing study, free time, meals and travel, and sleep"></svg>
+        </div>
+        <div class="legend" id="legend"></div>
+      </div>
+      <ol class="tl" id="timeline"></ol>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Free time activities</p>
+      <h2>Hobbies that help him study</h2>
+    </div>
+    <div class="hobbies">
+      <div class="hobby"><div><small>He likes</small><h3>Playing basketball</h3></div><p>He plays with his friends after homework. <b>It helps him with teamwork and energy.</b> He comes back to his books with a clear head.</p></div>
+      <div class="hobby"><div><small>He enjoys</small><h3>Listening to music</h3></div><p>He listens to English songs while he rests. <b>It helps him learn new words</b> and relax before bed.</p></div>
+      <div class="hobby"><div><small>He loves</small><h3>Reading comics</h3></div><p>He reads comics every night. <b>It helps his imagination and his storytelling.</b> That is why this project is a comic strip.</p></div>
+      <div class="hobby"><div><small>He often goes</small><h3>Cycling</h3></div><p>He rides his bike to school and around the lake. <b>Fresh air wakes up his mind</b> before the first class.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="comic" id="comic">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">The comic strip</p>
+        <h2>One day, six panels</h2>
+      </div>
+      <div class="controls">
+        <button class="btn" id="play" type="button"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg><span>Play comic</span></button>
+        <button class="cbtn" id="prev" type="button" aria-label="Previous panel"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 3L5 9l6 6"/></svg></button>
+        <button class="cbtn" id="next" type="button" aria-label="Next panel"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="rail" id="rail" tabindex="0" role="region" aria-label="Comic strip. Drag or use the arrow keys.">
+    <div class="track" id="track">
+
+      <article class="panel">
+        <div class="cap">05:45 · Morning routine</div>
+        <div class="fx" aria-hidden="true">Ring!</div>
+        <svg viewBox="0 0 320 400" role="img" aria-label="Bát Hùng Vương wakes up and holds flashcards next to an alarm clock">
+          <rect class="f-dawn" width="320" height="400"/>
+          <polygon class="f-gold ot" data-star="246,150,74,44,8" opacity=".9"/>
+          <circle class="f-sun o" cx="246" cy="150" r="30"/>
+          <path class="f-dawn2" d="M0 338 Q80 306 160 330 T320 322 V400 H0Z"/>
+          <use href="#hero" x="85" y="160" width="150" height="236"/>
+          <g transform="translate(52 318)">
+            <circle class="f-gold o" cx="-14" cy="-30" r="8"/><circle class="f-gold o" cx="14" cy="-30" r="8"/>
+            <circle class="f-paper o" r="30"/>
+            <line class="o" x1="0" y1="0" x2="-22" y2="0"/><line class="o" x1="0" y1="0" x2="3" y2="20"/>
+          </g>
+          <g transform="rotate(-8 258 310)"><rect class="f-paper o" x="228" y="282" width="56" height="42"/><text x="256" y="314" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="#d8402a">A</text></g>
+          <g transform="rotate(7 262 306)"><rect class="f-paper o" x="236" y="290" width="56" height="42"/><text x="264" y="322" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="#2f6f5e">B</text></g>
+        </svg>
+        <div class="bubble">Good morning! I review my flashcards before breakfast.</div>
+      </article>
+
+      <article class="panel">
+        <div class="cap">07:00 · In class</div>
+        <div class="fx" aria-hidden="true">Scribble</div>
+        <svg viewBox="0 0 320 400" role="img" aria-label="Bát Hùng Vương takes notes at a desk in front of a board">
+          <rect class="f-wall" width="320" height="400"/>
+          <rect class="f-board o" x="22" y="150" width="276" height="120"/>
+          <text x="38" y="186" font-family="IBM Plex Mono,monospace" font-size="20" fill="#efe5cf">Unit 2</text>
+          <path d="M230 176h50M230 196h38M230 216h46" stroke="#efe5cf" stroke-width="3" stroke-linecap="round"/>
+          <use href="#hero" x="85" y="160" width="150" height="236"/>
+          <rect class="f-wood o" x="12" y="318" width="296" height="90"/>
+          <g transform="rotate(-6 200 312)"><rect class="f-paper o" x="170" y="294" width="76" height="30"/><path d="M180 304h56M180 312h44" stroke="#120b08" stroke-width="2" stroke-linecap="round"/></g>
+          <g transform="rotate(-24 262 306)"><rect class="f-lamp o" x="250" y="300" width="44" height="7"/><polygon class="f-ink" points="294,300 294,307 303,303.5"/></g>
+        </svg>
+        <div class="bubble">I always take notes in class.</div>
+      </article>
+
+      <article class="panel">
+        <div class="cap">14:00 · Homework time</div>
+        <div class="fx" aria-hidden="true">Flip!</div>
+        <svg viewBox="0 0 320 400" role="img" aria-label="Bát Hùng Vương does homework under a lamp with a stack of books">
+          <rect class="f-night" width="320" height="400"/>
+          <circle cx="52" cy="104" r="24" fill="#f4e9c0"/><circle cx="62" cy="98" r="22" class="f-night"/>
+          <polygon class="f-lamp" data-star="270,70,10,4,8"/>
+          <polygon class="f-lamp" data-star="130,60,7,3,8"/>
+          <polygon points="224,262 276,262 308,330 192,330" class="f-lamp" opacity=".5"/>
+          <use href="#hero" x="85" y="160" width="150" height="236"/>
+          <rect class="f-wood o" x="12" y="318" width="296" height="90"/>
+          <rect class="f-red o" x="28" y="292" width="62" height="13"/>
+          <rect class="f-jade o" x="34" y="279" width="54" height="13"/>
+          <rect class="f-gold o" x="30" y="266" width="58" height="13"/>
+          <path class="o nf" d="M252 318 L252 288 L274 258"/>
+          <polygon class="f-lamp o" points="262,250 292,262 280,280 252,266"/>
+          <rect class="f-ink" x="238" y="316" width="30" height="5"/>
+          <g transform="rotate(-4 170 312)"><rect class="f-paper o" x="136" y="296" width="70" height="26"/><path d="M146 306h48M146 314h34" stroke="#120b08" stroke-width="2" stroke-linecap="round"/></g>
+        </svg>
+        <div class="bubble">I finish my homework before dinner.</div>
+      </article>
+
+      <article class="panel">
+        <div class="cap">15:30 · Free time</div>
+        <div class="fx" aria-hidden="true">Swish!</div>
+        <svg viewBox="0 0 320 400" role="img" aria-label="Bát Hùng Vương plays basketball near a hoop">
+          <rect class="f-wall" width="320" height="400"/>
+          <rect class="f-court" y="318" width="320" height="82"/>
+          <path d="M0 318 H320" class="o nf"/>
+          <path d="M40 400 Q160 300 280 400" fill="none" stroke="#efe5cf" stroke-width="3"/>
+          <rect class="f-paper o" x="268" y="150" width="40" height="58"/>
+          <rect class="f-red ot" x="276" y="172" width="24" height="18" fill-opacity=".0" style="stroke:#d8402a"/>
+          <ellipse class="nf" cx="250" cy="206" rx="22" ry="6" style="stroke:#d8402a;stroke-width:4"/>
+          <path d="M229 208 L238 252 M250 212 L250 256 M271 208 L262 252" stroke="#efe5cf" stroke-width="2" fill="none"/>
+          <use href="#hero" x="85" y="160" width="150" height="236"/>
+          <g transform="translate(62 366)">
+            <circle class="f-court o" r="24" style="fill:#e8782a"/>
+            <path class="ot nf" d="M-24 0H24M0 -24V24"/><path class="ot nf" d="M-17 -17Q0 0 -17 17M17 -17Q0 0 17 17"/>
+          </g>
+        </svg>
+        <div class="bubble">In my free time, I play basketball with my friends!</div>
+      </article>
+
+      <article class="panel">
+        <div class="cap">Study + play</div>
+        <div class="fx" aria-hidden="true">Balance!</div>
+        <svg viewBox="0 0 320 400" role="img" aria-label="A balanced scale with a book on one side and a basketball on the other">
+          <rect class="f-teal" width="320" height="400"/>
+          <polygon class="f-sun ot" data-star="160,230,176,104,8" opacity=".22"/>
+          <path d="M160 162 L160 396" stroke="#120b08" stroke-width="8"/>
+          <path class="o nf" d="M46 162 H274" stroke-width="6"/>
+          <circle class="f-gold o" cx="160" cy="162" r="9"/>
+          <path d="M46 164 L22 232 M46 164 L70 232 M274 164 L250 232 M274 164 L298 232" stroke="#120b08" stroke-width="2.5" fill="none"/>
+          <path class="f-gold o" d="M18 232 H74 Q70 248 46 248 Q22 248 18 232Z"/>
+          <path class="f-gold o" d="M246 232 H302 Q298 248 274 248 Q250 248 246 232Z"/>
+          <g transform="translate(46 212)"><rect class="f-red o" x="-20" y="-20" width="40" height="22"/><path class="ot nf" d="M-14 -10H14M-14 -4H8"/></g>
+          <g transform="translate(274 210)"><circle r="19" style="fill:#e8782a" class="o"/><path class="ot nf" d="M-19 0H19M0 -19V19"/></g>
+          <use href="#hero" x="85" y="160" width="150" height="236"/>
+        </svg>
+        <div class="bubble">Study hard, play hard. Balance is my superpower!</div>
+      </article>
+
+      <article class="panel">
+        <div class="cap">The result</div>
+        <div class="fx" aria-hidden="true">A+!</div>
+        <svg viewBox="0 0 320 400" role="img" aria-label="Bát Hùng Vương holds up a test with an A plus while stars fall around him">
+          <rect class="f-sunbg" width="320" height="400"/>
+          <polygon class="f-sun" data-star="160,250,190,110,8" opacity=".5"/>
+          <polygon class="f-red ot" data-star="44,214,16,7,8"/><polygon class="f-jade ot" data-star="282,196,14,6,8"/>
+          <polygon class="f-jade ot" data-star="30,300,12,5,8"/><polygon class="f-red ot" data-star="296,290,12,5,8"/>
+          <polygon class="f-ink" data-star="58,170,8,3.5,8"/><polygon class="f-ink" data-star="268,160,8,3.5,8"/>
+          <use href="#hero" x="85" y="160" width="150" height="236"/>
+          <g transform="rotate(-9 252 296)">
+            <rect class="f-paper o" x="212" y="244" width="80" height="104"/>
+            <text x="252" y="302" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="46" fill="#d8402a">A+</text>
+            <path d="M224 318h56M224 330h40" stroke="#120b08" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="bubble">My hobbies help me study better. I did it!</div>
+      </article>
+
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="meter" aria-hidden="true"><i id="meterBar"></i></div>
+    <p class="hint"><span>Drag, scroll sideways or use the arrows</span><span>Six panels</span></p>
+  </div>
+</section>
+
+<section id="words">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Unit 2 vocabulary</p>
+      <h2>Words from the story</h2>
+      <p class="sub">Press the speaker to hear a word.</p>
+    </div>
+    <div class="vocab" id="vocab"></div>
+  </div>
+</section>
+
+<section id="video" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Our video</p>
+      <h2>Watch the story</h2>
+      <p class="sub">Music fades down when the video plays.</p>
+    </div>
+    <div class="video">
+      <video id="vid" controls playsinline preload="metadata" hidden></video>
+      <div class="v-empty" id="vEmpty">
+        <div class="ring" aria-hidden="true"><svg id="drumSmall" viewBox="-200 -200 400 400"></svg></div>
+        <div class="in">
+          <h3>Video coming soon</h3>
+          <p>Our group is recording the story of Bát Hùng Vương.</p>
+          <div class="cta">
+            <button class="btn ghost" id="vPick" type="button">Open a video file</button>
+            <a class="btn" id="vLink" href="#" target="_blank" rel="noopener" hidden>Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+      <input id="vFile" type="file" accept="video/*" hidden>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Our group</p>
+      <h2>Eight people, eight jobs</h2>
+    </div>
+    <div class="team" id="teamGrid"></div>
+  </div>
+</section>
+</main>
+
+<div class="cur" id="cur" aria-hidden="true">Drag</div>
+
+<footer>
+  <div class="bigmark" aria-hidden="true">Bát Hùng Vương</div>
+  <div class="wrap">
+    <p>Bát Hùng Vương · English Project 5, Study Superheroes Comic Strip · Study and free time activities, Unit 2</p>
+    <a class="btn ghost" href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
